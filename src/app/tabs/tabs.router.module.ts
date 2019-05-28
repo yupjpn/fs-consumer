@@ -34,6 +34,26 @@ const routes: Routes = [
           }
         ]
       },
+      // just added this
+      {
+        path: 'tab4',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
+          }
+        ]
+      },
+      // just added this
+      {
+        path: 'tab5',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab5/tab5.module#Tab5PageModule'
+          }
+        ]
+      },
       {
         path: '',
         redirectTo: '/tabs/tab1',

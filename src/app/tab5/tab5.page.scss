@@ -1,0 +1,29 @@
+.icon{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text{
+    display: inline-block;
+    vertical-align: middle;
+    color: #989aa2;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .reviewHeader {
+      color: #1d843d;
+      text-decoration: underline;
+      font-weight: bold;
+  }
+
+  .reviewDate {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+  }
+
+  .reviewText {
+    font-size: 12px;
+}

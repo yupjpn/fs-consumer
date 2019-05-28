@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Trips
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <h1> Trips </h1>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h3 class="bold">Current trips </h3>
+        <p> Lisbon, Portugal </p>
+        <p> Should rental details be a new page or tab? </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <!-- How do I bring the button down? -->
+      <ion-label>
+        <h3 class="bold"> No upcoming trips </h3>
+        <p> Start planning your next trip</p>
+      </ion-label>
+      <ion-button (click)="navToExplore()"> Explore Airbnb </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
