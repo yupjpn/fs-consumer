@@ -11,7 +11,7 @@ export class Review {
     constructor(reviewer: User, listing: Listing, reviewText: string, numOfStars: number) {
         this.reviewer = reviewer;
         this.listing = listing;
-        this.reviewee = listing.getOwnerName();
+        this.reviewee = listing.getOwner();
         this.reviewText = reviewText;
         this.numOfStars = numOfStars;
     }

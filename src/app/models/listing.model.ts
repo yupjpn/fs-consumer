@@ -23,7 +23,7 @@ export class Listing {
         this.location = location;
     }
 
-    public setOwnerName(owner: User) {
+    public setOwner(owner: User) {
         this.owner = owner;
     }
     public setImageLink(imageLink: string) {
@@ -41,7 +41,7 @@ export class Listing {
         return this.location;
     }
 
-    public getOwnerName() {
+    public getOwner() {
         return this.owner;
     }
 
