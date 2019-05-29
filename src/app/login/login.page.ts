@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
   }
 
   navToTabs() {
-    this.navCtrl.navigateForward('tabs');
+    this.navCtrl.navigateForward('tabs/tab1');
   }
 
 }
