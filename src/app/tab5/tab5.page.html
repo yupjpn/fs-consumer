@@ -32,33 +32,25 @@
 
     <ion-item>
         <ion-label>
-          <h2> Yuki provided </h2>
-          <ion-icon name="checkmark-circle" class="icon"></ion-icon>
-          <span class="text"> Email address </span>
-          <ion-icon name="checkmark-circle" class="icon"></ion-icon>
-          <span class="text"> Phone number </span>
-        </ion-label>
-      </ion-item>
-
-      <ion-item>
-          <ion-label>
-            <h2> 2 reviews </h2>
-            <p class="reviewHeader"> From hosts (2) </p>
-            <h3 class="reviewDate"> April 2019</h3>
-            <p class="reviewText"> It was great having Yuki and 
-              his friends stay with us. He <br> followed all the house 
-              rules and left the apartment very <br> clean and very tidy. We are 
-              looking forward to having Yuki <br> stay with us again on her 
-              next trip to Zimbabwe. Always <br> safe travels and 
-              great adventures!</p>
-              <br>
-              <h3 class="reviewDate"> November 2018</h3>
-              <p class="reviewText"> Yuki is a wonderful Airbnb guest. He is an excellent <br>
-              communicator, prompt, polite, respectful of our property, <br> 
-              quiet, super-friendly and he left our place in excellent <br> 
-              shape, thank you! Very, very highly recommended!</p>
-          </ion-label>
-        </ion-item>
+        <h2> Yuki provided </h2>
+        <ion-icon name="checkmark-circle" class="icon"></ion-icon>
+        <span class="text"> Email address </span>
+        <ion-icon name="checkmark-circle" class="icon"></ion-icon>
+        <span class="text"> Phone number </span>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item *ngFor="let review of allReviews">
+        {{review.getDate()}}
+        <br>
+        {{review.getListing().getListingName()}}
+        <br>
+        <img src={{review.getListing().getImageLink()}} width="100px" slot="end"/>
+        <br>
+        Review:
+        <br>
+        {{review.getReviewText()}}           
+    </ion-item>
   
   </ion-list>
 

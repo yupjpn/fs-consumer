@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 import {Listing} from '../models/listing.model';
+import { UseExistingWebDriver } from 'protractor/built/driverProviders';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-tab2',

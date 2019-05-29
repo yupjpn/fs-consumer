@@ -2,15 +2,15 @@ import { User } from './user.model';
 
 export class Listing {
     private listingName: string;
-    private owner: User;
+    private ownerName: string;
     private location: string;
     private imageLink: string;
     private price: number;
 
-    constructor(listingName: string, location: string, owner: User, imageLink: string, price: number) {
+    constructor(listingName: string, location: string, ownerName: string, imageLink: string, price: number) {
         this.listingName = listingName;
         this.location = location;
-        this.owner = owner;
+        this.ownerName = ownerName;
         this.imageLink = imageLink;
         this.price = price;
     }
@@ -23,8 +23,8 @@ export class Listing {
         this.location = location;
     }
 
-    public setOwner(owner: User) {
-        this.owner = owner;
+    public setOwner(ownerName: string) {
+        this.ownerName = ownerName;
     }
     public setImageLink(imageLink: string) {
         this.imageLink = imageLink;
@@ -42,7 +42,7 @@ export class Listing {
     }
 
     public getOwner() {
-        return this.owner;
+        return this.ownerName;
     }
 
     public getImageLink() {

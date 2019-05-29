@@ -4,16 +4,18 @@ import { Listing } from './listing.model';
 export class Review {
     private reviewer: User;
     private listing: Listing;
-    private reviewee: User;
+    private revieweeName: string;
     private reviewText: string;
     private numOfStars: number;
+    private date: string;
 
-    constructor(reviewer: User, listing: Listing, reviewText: string, numOfStars: number) {
+    constructor(reviewer: User, listing: Listing, revieweeName: string, reviewText: string, numOfStars: number, date: string) {
         this.reviewer = reviewer;
         this.listing = listing;
-        this.reviewee = listing.getOwner();
+        this.revieweeName = revieweeName;
         this.reviewText = reviewText;
         this.numOfStars = numOfStars;
+        this.date = date;
     }
 
     public setReviewer(reviewer: User) {
@@ -24,14 +26,18 @@ export class Review {
         this.listing = listing;
     }
 
-    public setReviewee(reviewee: User) {
-        this.reviewee = reviewee;
+    public setReviewee(revieweeName: string) {
+        this.revieweeName = revieweeName;
     }
     public setReviewText(reviewText: string) {
         this.reviewText = reviewText;
     }
     public setNumOfStars(numOfStars: number) {
         this.numOfStars = numOfStars;
+    }
+
+    public setDate(date: string) {
+        this.date = date;
     }
 
     public getReviewer() {
@@ -42,8 +48,8 @@ export class Review {
         return this.listing;
     }
 
-    public getReviewee() {
-        return this.reviewee;
+    public getRevieweeName() {
+        return this.revieweeName;
     }
     public getReviewText() {
         return this.reviewText;
@@ -52,4 +58,7 @@ export class Review {
         return this.numOfStars;
     }
 
+    public getDate() {
+        return this.date;
+    }
 }
