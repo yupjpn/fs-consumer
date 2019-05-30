@@ -6,13 +6,17 @@ export class Listing {
     private location: string;
     private imageLink: string;
     private price: number;
+    private id: number;
+    private saved: boolean;
 
-    constructor(listingName: string, location: string, ownerName: string, imageLink: string, price: number) {
+    constructor(listingName: string, location: string, ownerName: string, imageLink: string, price: number, id: number, saved: boolean) {
         this.listingName = listingName;
         this.location = location;
         this.ownerName = ownerName;
         this.imageLink = imageLink;
         this.price = price;
+        this.id = id;
+        this.saved = saved;
     }
 
     public setListingName(listingName: string) {
@@ -33,6 +37,14 @@ export class Listing {
         this.price = price;
     }
 
+    public setId(id: number) {
+        this.id = id;
+    }
+
+    public setSaved(saved: boolean) {
+        this.saved = saved;
+    }
+
     public getListingName() {
         return this.listingName;
     }
@@ -51,6 +63,14 @@ export class Listing {
 
     public  getPrice() {
         return this.price;
+    }
+
+    public  getId() {
+        return this.id;
+    }
+
+    public  getSaved() {
+        return this.saved;
     }
 
 }
