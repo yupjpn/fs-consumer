@@ -7,19 +7,15 @@
   </ion-header>
   
   <ion-content>
-    <h2>Saved</h2>
-    <br>
-    <ion-list>
 
-      <ion-item *ngFor="let listing of savedListings">
-        <figure>
-          <img src={{listing.getImageLink()}} width="200px"/>
-          <figcaption class="listingName"> {{listing.getListingName()}} </figcaption>
-          <figcaption class="location"> {{listing.getLocation()}} </figcaption>
-        </figure>
-      </ion-item>
-      
+    <ion-list>  
+      <ion-card *ngFor="let listing of savedListings" (click)="navToListingDetails(listing)">
+        <img src={{listing.getImageLink()}} width="100px"/>
+        <h3 class="listing-name"> {{listing.getListingName()}} </h3>
+      </ion-card>
+  
     </ion-list>
+  
   </ion-content>
   
   <ion-footer>

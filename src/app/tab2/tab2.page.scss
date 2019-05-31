@@ -1,16 +1,9 @@
-h2 {
-    padding-left:10px;
-    font-weight: bold;
-}
-
-p {
-    padding-left:10px;
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
   }
-
-.listingName {
-    
-}
-
-.location {
-    font-style: italic;
-}
+  
+  .listing-name {
+    padding-left: 10px;
+    padding-bottom: 5px;
+  }

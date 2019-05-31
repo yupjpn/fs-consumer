@@ -24,14 +24,19 @@ export class ListingService {
     this.listings.push(listing1);
     this.listings.push(listing2);
     this.listings.push(listing3);
+
+    console.log(this.listings.length);
+    console.log(listing1.getId())
+    console.log(listing2.getId())
+    console.log(listing3.getId())
   }
 
   getListings() {
     return this.listings;
   }
 
-  // Takes in a rental's unique ID and returns corresponding Rental object.
-  // If unique ID is not mapped to any Rental object, then return null
+  // Takes in a listing's unique ID and returns corresponding Listing object.
+  // If listing ID is not mapped to any Listing object, then return null
   findListingById(id: number): Listing {
     let foundListing: Listing = null;
 

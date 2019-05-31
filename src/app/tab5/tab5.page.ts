@@ -16,9 +16,9 @@ export class Tab5Page implements OnInit {
   constructor() { 
     // change this to service soon
     let listing1 = new Listing("Cozy Apartment in Sao Bento", "Lisbon, Portugal", "Miki",
-    "https://t-ec.bstatic.com/images/hotel/max1024x768/839/83981934.jpg", 45, 1);
+    "https://t-ec.bstatic.com/images/hotel/max1024x768/839/83981934.jpg", 45, 1, true);
     let listing2 = new Listing("Apartment Near City Center", "Berlin, Germany", "Miki",
-    "https://s-ec.bstatic.com/images/hotel/max1024x768/118/118469256.jpg", 45, 2);
+    "https://s-ec.bstatic.com/images/hotel/max1024x768/118/118469256.jpg", 45, 2, true);
     
     this.reviewedListings = new Array<Listing>();
     this.reviewedListings.push(listing1);

@@ -41,4 +41,14 @@ export class Tab2Page {
   navToExplore() {
     this.navCtlr.navigateForward('tabs/tab1');
   }
+
+  navToListingDetails(listing: Listing) {
+    this.navCtlr.navigateForward("listing-details", {
+      queryParams: {
+        rentalName: listing.getListingName(),
+        rentalId: listing.getId()
+      }
+    });
+  }
+
 }
