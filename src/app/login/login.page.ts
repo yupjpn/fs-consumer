@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -8,9 +9,26 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  public user: any = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: ""
+  }
+
+  constructor(private navCtrl: NavController, private httpClient: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  login() {
+
+    this.httpClient.post("http://localhost:3000/api/users/authentication", this.user).subscribe(
+      (response) => {
+        console.log(response);
+      }
+    );
+
   }
 
   navToTabs() {
