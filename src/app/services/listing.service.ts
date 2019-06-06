@@ -26,9 +26,9 @@ export class ListingService {
     this.listings.push(listing3);
 
     console.log(this.listings.length);
-    console.log(listing1.getId())
-    console.log(listing2.getId())
-    console.log(listing3.getId())
+    console.log(listing1.getId());
+    console.log(listing2.getId());
+    console.log(listing3.getId());
   }
 
   getListings() {

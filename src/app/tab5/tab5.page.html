@@ -40,7 +40,16 @@
       </ion-label>
     </ion-item>
     
-    <ion-item *ngFor="let review of allReviews">
+    
+    <ion-card *ngFor="let review of reviews">
+      <img src={{review.getListing().getImageLink()}} width="100px"/>
+      <h3 class="review-name"> {{review.getListing().getListingName()}} </h3>
+      <p class="review-text"> {{review.getDate()}} </p>
+      <p class="review-text"> Rating: {{review.getNumOfStars()}}/5 </p>
+      <p text-wrap class="review-text"> Review: {{review.getReviewText()}} </p>
+    </ion-card>
+    
+    <!-- <ion-item *ngFor="let review of reviews">
         {{review.getDate()}}
         <br>
         {{review.getListing().getListingName()}}
@@ -50,7 +59,7 @@
         Review:
         <br>
         {{review.getReviewText()}}           
-    </ion-item>
+    </ion-item> -->
   
   </ion-list>
 

@@ -2,15 +2,15 @@ import { User } from './user.model';
 import { Listing } from './listing.model';
 
 export class Review {
-    private reviewer: User;
+    // private reviewer: User;
     private listing: Listing;
     private revieweeName: string;
     private reviewText: string;
     private numOfStars: number;
     private date: string;
 
-    constructor(reviewer: User, listing: Listing, revieweeName: string, reviewText: string, numOfStars: number, date: string) {
-        this.reviewer = reviewer;
+    constructor(listing: Listing, revieweeName: string, reviewText: string, numOfStars: number, date: string) {
+        // this.reviewer = reviewer;
         this.listing = listing;
         this.revieweeName = revieweeName;
         this.reviewText = reviewText;
@@ -18,9 +18,9 @@ export class Review {
         this.date = date;
     }
 
-    public setReviewer(reviewer: User) {
-        this.reviewer = reviewer;
-    }
+    // public setReviewer(reviewer: User) {
+    //     this.reviewer = reviewer;
+    // }
 
     public setListing(listing: Listing) {
         this.listing = listing;
@@ -40,9 +40,9 @@ export class Review {
         this.date = date;
     }
 
-    public getReviewer() {
-        return this.reviewer;
-    }
+    // public getReviewer() {
+    //     return this.reviewer;
+    // }
 
     public getListing() {
         return this.listing;
