@@ -9,12 +9,8 @@ import { NavController, AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  public user: any = {
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: ""
-  }
+public email: string = "";
+public password: string = "";
 
   constructor(private navCtrl: NavController, private httpClient: HttpClient,
               private alertCtrl: AlertController) { }
@@ -26,13 +22,7 @@ export class LoginPage implements OnInit {
     var errorMessage = "";
 
     if (errNo == 400) {
-      errorMessage = "Incorrect email."      
-    }
-    else if (errNo == 401) {
-      errorMessage = "Incorrect password."      
-    }
-    else if (errNo == 402) {
-      errorMessage = "Please try again."      
+      errorMessage = "Incorrect login information."      
     }
 
     const alert = await this.alertCtrl.create({
@@ -44,11 +34,26 @@ export class LoginPage implements OnInit {
 }
   
   login() {
-    this.httpClient.post("http://localhost:3000/api/users/authentication", this.user).subscribe(
+
+    const authReq = {
+      email: this.email,
+      password: this.password
+    };
+
+    this.httpClient.post("http://localhost:3000/api/users/authentication", authReq).subscribe(
       (response: any) => {
+        
+        // response is an array at the moment, which is why it doesn't have a .id property
+        const userId = response.id;
+
+        console.log(response);
+        console.log(userId)
+
+        localStorage.setItem("user_id", userId);
+
         this.navCtrl.navigateForward("tabs/tab1", {
           queryParams: {
-            userId: response.id
+            user_id: userId
           }
         });
       },
