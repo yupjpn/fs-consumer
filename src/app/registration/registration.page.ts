@@ -37,7 +37,7 @@ export class RegistrationPage implements OnInit {
       this.httpClient.post("http://localhost:3000/api/users", this.user).subscribe(
         (response: any) => {
           console.log(response);
-          this.navToTabs();
+          this.navToLogin();
         },
         (err) => {
           console.log(err);
@@ -46,8 +46,8 @@ export class RegistrationPage implements OnInit {
       );      
   }  
 
-  navToTabs() {
-    this.navCtrl.navigateForward('tabs/tab1');
+  navToLogin() {
+    this.navCtrl.navigateForward('login');
   }
 
   ngOnInit() {
