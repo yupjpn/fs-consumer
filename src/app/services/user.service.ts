@@ -3,6 +3,8 @@ import { User } from '../models/user.model';
 import { ReviewService } from './review.service';
 import { ListingService } from './listing.service';
 import { Review } from '../models/review.model';
+import { HttpClient } from '@angular/common/http';
+import { NavController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,8 @@ export class UserService {
 
   private user: User;
 
-  constructor(reviewService: ReviewService, listingService: ListingService) {
+  constructor(reviewService: ReviewService, listingService: ListingService, 
+    private httpClient: HttpClient, private navCtrl: NavController) {
     let reviews = Array<Review>();
 
     this.user = new User("Yuki", "Peters", "yukipeters@aol.com", "555-599-4628");
@@ -23,10 +26,5 @@ export class UserService {
 
    public getUser() {
      return this.user;
-   }
-
-   getUsers() {
-     // 1. Fetch all users
-     // 2. Fetch all reviews for the following user Id's
    }
 }

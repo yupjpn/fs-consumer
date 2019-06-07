@@ -17,15 +17,21 @@ export class Tab5Page implements OnInit {
   private reviews: Array<Review>;
 
   constructor(private userService: UserService, private reviewService: ReviewService, private httpClient: HttpClient) { 
-    this.user = userService.getUser();
     this.reviews = reviewService.getReviews();
 
     const userId = localStorage.getItem("user_id");
 
-    // if (userId) {
-    //   this.httpClient.get("http://localhost:3000/api/users/" + userId)
-    // }
-  }
+        // there should be a userId because you can't get into the app without one
+        this.httpClient.get("http://localhost:3000/api/users/" + userId).subscribe(
+          (response: any) => {
+            console.log(response);
+    
+            this.user = new User(response.user.firstname, response.user.lastname, response.user.email,
+              response.user.password);
+          }
+        );
+      }
+    
 
   public setUser(user: User) {
     this.user = user;

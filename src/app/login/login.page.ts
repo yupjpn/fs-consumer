@@ -18,16 +18,10 @@ public password: string = "";
   ngOnInit() {
   }
 
-  async presentAlert(errNo) {
-    var errorMessage = "";
-
-    if (errNo == 400) {
-      errorMessage = "Incorrect login information."      
-    }
-
+  async presentAlert() {
     const alert = await this.alertCtrl.create({
     header: "Error",
-    subHeader: errorMessage,
+    subHeader: "Incorrect login information.",
     buttons: ['Dismiss']
    });
    await alert.present(); 
@@ -44,21 +38,17 @@ public password: string = "";
       (response: any) => {
         
         // response is an array at the moment, which is why it doesn't have a .id property
-        const userId = response.id;
+        const userId = response.user.id;
 
         console.log(response);
-        console.log(userId)
+        console.log(userId);
 
         localStorage.setItem("user_id", userId);
 
-        this.navCtrl.navigateForward("tabs/tab1", {
-          queryParams: {
-            user_id: userId
-          }
-        });
+        this.navCtrl.navigateForward("tabs/tab1");
       },
       (err) => {
-        this.presentAlert(err.status);
+        this.presentAlert();
       }
     );
   }

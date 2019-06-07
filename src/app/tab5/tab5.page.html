@@ -10,8 +10,8 @@
       <ion-avatar slot="end">
         <img src="https://i.boring.host/1654O2Dy.jpg">
       </ion-avatar>
-      <ion-label>
-          <h2>Hi, I'm Yuki</h2>
+      <ion-label *ngIf="user">
+          <h2>Hi, I'm {{user.getFirstName()}}</h2>
           <ion-note>Joined in 2019</ion-note>
           <br>
           <ion-icon name="paw" class="icon"></ion-icon>
