@@ -17,7 +17,7 @@ export class UserService {
     private httpClient: HttpClient, private navCtrl: NavController) {
     let reviews = Array<Review>();
 
-    this.user = new User("Yuki", "Peters", "yukipeters@aol.com", "555-599-4628");
+    this.user = new User("", "", "", "");
    }
 
    public setUser(user: User) {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NavController, AlertController } from '@ionic/angular';
-import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 
 
