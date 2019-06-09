@@ -45,7 +45,14 @@ export class ListingDetailsPage implements OnInit {
     }
     
   ngOnInit() {
+  }
 
+  navToNewBooking(listing: Listing) {
+    this.navCtrl.navigateForward("new-booking", {
+      queryParams: {
+        listingId: listing.id
+      }
+    });
   }
 
 }

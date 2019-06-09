@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> New Booking </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+    <ion-item>
+      <ion-label> Date From </ion-label>
+      <ion-datetime [(ngModel)]="booking.date_from" display-format="MMM DD, YYYY HH:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Date To </ion-label>
+      <ion-datetime [(ngModel)]="booking.date_to" display-format="MMM DD, YYYY HH:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-button expand="full" (click)="submit()"> Book </ion-button>
+
+  </div>
+</ion-content>

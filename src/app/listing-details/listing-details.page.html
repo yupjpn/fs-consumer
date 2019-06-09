@@ -11,7 +11,8 @@
       <h3 class="pad-left"> {{currentListing.name}} </h3>
       <p class="pad-left"> {{currentListing.location}} </p>
       <p class="pad-left"> ${{currentListing.price}} per night</p>
-
     </ion-card>
+
+    <ion-button expand="full" (click)="navToNewBooking(currentListing)"> Book Now </ion-button>
  
 </ion-content>

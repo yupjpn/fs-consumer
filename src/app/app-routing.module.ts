@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'tab5', loadChildren: './tab5/tab5.module#Tab5PageModule' },
   { path: 'listing-details', loadChildren: './listing-details/listing-details.module#ListingDetailsPageModule' },
   { path: 'registration', loadChildren: './registration/registration.module#RegistrationPageModule' },
+  { path: 'new-booking', loadChildren: './new-booking/new-booking.module#NewBookingPageModule' },
 ];
 
 @NgModule({
