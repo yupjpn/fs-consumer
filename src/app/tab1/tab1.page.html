@@ -1,10 +1,21 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        Explore
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content></ion-content>
-  
+  <ion-toolbar>
+    <ion-title>
+      All Listing
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <br>
+
+    <ion-card *ngFor="let listing of listings" (click)="navToListingDetails(listing)">
+      <img src={{listing.imageLink}} width="100px"/>
+      <h3 class="rental-name"> {{listing.name}} </h3>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>

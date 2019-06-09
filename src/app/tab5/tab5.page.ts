@@ -13,11 +13,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab5Page implements OnInit {
 
-  private user: User;
-  private reviews: Array<Review>;
+  public user: User;
+  // private reviews: Array<Review>;
 
   constructor(private userService: UserService, private reviewService: ReviewService, private httpClient: HttpClient) { 
-    this.reviews = reviewService.getReviews();
+    // this.reviews = reviewService.getReviews();
 
     const userId = localStorage.getItem("user_id");
 
@@ -31,23 +31,6 @@ export class Tab5Page implements OnInit {
           }
         );
       }
-    
-
-  public setUser(user: User) {
-    this.user = user;
-  }
-
-  public setReviews(reviews: Array<Review>) {
-    this.reviews = reviews;
-  }
-
-  public getUser() {
-    return this.user;
-  }
-
-  public getReviews() {
-    return this.reviews;
-  }
   
   ngOnInit() {
   }

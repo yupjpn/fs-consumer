@@ -1,76 +1,17 @@
-import { User } from './user.model';
-
 export class Listing {
-    private listingName: string;
-    private ownerName: string;
-    private location: string;
-    private imageLink: string;
-    private price: number;
-    private id: number;
-    private saved: boolean;
+    public name: string;
+    public location: string;
+    public price: number;
+    public imageLink: string;
+    public owner_id: number;
+    public id: number;
 
-    constructor(listingName: string, location: string, ownerName: string, imageLink: string, price: number, id: number, saved: boolean) {
-        this.listingName = listingName;
+    constructor(name: string, location: string, price: number, imageLink: string, owner_id: number) {
+        this.name = name;
         this.location = location;
-        this.ownerName = ownerName;
-        this.imageLink = imageLink;
         this.price = price;
-        this.id = id;
-        this.saved = saved;
-    }
-
-    public setListingName(listingName: string) {
-        this.listingName = listingName;
-    }
-
-    public setLocation(location: string) {
-        this.location = location;
-    }
-
-    public setOwner(ownerName: string) {
-        this.ownerName = ownerName;
-    }
-    public setImageLink(imageLink: string) {
         this.imageLink = imageLink;
-    }
-    public setPrice(price: number) {
-        this.price = price;
-    }
-
-    public setId(id: number) {
-        this.id = id;
-    }
-
-    public setSaved(saved: boolean) {
-        this.saved = saved;
-    }
-
-    public getListingName() {
-        return this.listingName;
-    }
-
-    public getLocation() {
-        return this.location;
-    }
-
-    public getOwner() {
-        return this.ownerName;
-    }
-
-    public getImageLink() {
-        return this.imageLink;
-    }
-
-    public  getPrice() {
-        return this.price;
-    }
-
-    public  getId() {
-        return this.id;
-    }
-
-    public  getSaved() {
-        return this.saved;
+        this.owner_id = owner_id;
     }
 
 }
