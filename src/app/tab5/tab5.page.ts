@@ -16,7 +16,7 @@ export class Tab5Page implements OnInit {
   public user: User;
   // private reviews: Array<Review>;
 
-  constructor(private userService: UserService, private reviewService: ReviewService, private httpClient: HttpClient) { 
+  constructor(private httpClient: HttpClient) { 
     // this.reviews = reviewService.getReviews();
 
     const userId = localStorage.getItem("user_id");
@@ -26,7 +26,7 @@ export class Tab5Page implements OnInit {
           (response: any) => {
             console.log(response);
     
-            this.user = new User(response.user.firstname, response.user.lastname, response.user.email,
+            this.user = new User(response.user.firstName, response.user.lastName, response.user.email,
               response.user.password);
           }
         );
